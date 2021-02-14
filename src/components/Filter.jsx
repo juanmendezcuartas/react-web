@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 
 const Filter = (props) => {
 
-    const { handleSearchRegion, cosa } = props
+    const { handleSearchRegion } = props
     const [state, setState] = useState({search: ''})
     //const [regions, setRegions] = useState([])
     //console.log(cosa[0].region)
