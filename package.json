@@ -1,8 +1,7 @@
 {
-  "name": "countries-web",
+  "name": "react-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://juanmendezcuartas.github.io/countries-web",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -15,8 +14,6 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
