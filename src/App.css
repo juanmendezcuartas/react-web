@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+    position: static;
+    width: 100%;
+    border: solid 1px gray;
+    padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar h1 {
+    display: inline-block;
+    width: 50%;
+    font-size: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar button {
+    display: inline-block;
+    width: 25%;
+    padding-right: 2px;
+    font-size: 18px;
+    background-color: white;
+    border: white;
 }
 
-.App-link {
-  color: #61dafb;
+.secondbar{
+    position: static;
+    width: 100%;
+    padding: 1rem;
+    background-color:rgb(238, 232, 232);  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.secondbar .search{
+    display: inline-block;
+    width: 50%;
+    font-size: 20px;
+}
+
+.secondbar input{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px ;
+    border: 1px lightgrey;
+}
+.secondbar .filter {
+    display: inline-block;
+    width: 25%;
+    padding-right: 2px;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 5px ;
+}
+
+.secondbar select {
+    display: inline-block;
+    width: 100%; 
+    font-size: 18px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px ;
+    border: 1px lightgrey;
+    box-shadow: 2px black;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.countries {
+    position: static;
+    width: 100%;
+    
+    padding: 1rem;
+    background-color:rgb(238, 232, 232);  
+}
+
+.countries li {
+    display: inline-block;
+    position: static;
+    width: 25%;
+    border: solid 1px;
+    border-radius: 5px;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    list-style-type: none;   
+}
+
+.countries img {
+    position: static;
+    width: 100%;
+    border: solid 1px black;
+}
+
+.countries .text {
+    padding: 1rem;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.countries h2 {
+    padding: 0.5rem;
+}
+
+.countries h3 {
+    padding: 0.2rem;
 }
