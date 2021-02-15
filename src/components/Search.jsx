@@ -5,9 +5,7 @@ const Search = (props) => {
 
     const { handleSearch } = props
     const [state, setState] = useState({search: ''})
-
     const handleChange = (e) => {
-        //console.log(e.target.value)  <button onClick={()=> handleSearch(state.search)}>Search</button>
         setState({search: e.target.value})
     }
 
@@ -19,6 +17,7 @@ const Search = (props) => {
                 onChange={handleChange}
                 type="text"
                 placeholder="Search for a country..."
+                className="inputsearch"
             />
             </Form>
         </Fragment>

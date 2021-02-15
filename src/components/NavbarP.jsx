@@ -13,25 +13,19 @@ const NavbarP = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
     return (
-        // <div className="navbar">
-        //     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        //         <h1>Where in the world?</h1>
-        //         <GlobalStyles/>
-        //         <button onClick={themeToggler}>Dark Mode</button>
-        // </ThemeProvider>
-        // </div>
+        <div className="nav">
         <Container fluid>
-  <Navbar expand="lg" variant="light" bg="light">
-  <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-    <Navbar.Brand href="#">Where in the word?</Navbar.Brand>
-    <Nav className="navbar-nav ml-auto">
-    <GlobalStyles/>
-        <Nav.Link href="#" onClick={themeToggler}><FontAwesomeIcon icon={faMoon} /> Dark Mode</Nav.Link>
-    </Nav>
-    </ThemeProvider>
-  </Navbar>
-</Container>
+            <Navbar>
+            <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+                <Navbar.Brand href="#">Where in the word?</Navbar.Brand>
+                <Nav className="navbar-nav ml-auto">
+                <GlobalStyles/>
+                    <Nav.Link href="#" onClick={themeToggler}><FontAwesomeIcon icon={faMoon} /> Dark Mode</Nav.Link>
+                </Nav>
+            </ThemeProvider>  
+            </Navbar>
+        </Container>
+        </div>
     )
 }
-
 export default NavbarP

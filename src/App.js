@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './App.css';
 import NavbarP from './components/NavbarP'
 import Countries from './components/Countries'
@@ -6,10 +6,10 @@ import Countries from './components/Countries'
 function App() {
 
   return (
-      <Fragment>
+        <div className="app">
           <NavbarP />
           <Countries />
-      </Fragment>
+        </div>
   );
 }
 

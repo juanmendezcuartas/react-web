@@ -10,35 +10,27 @@ import {
 const Country = (props) => {
 
     const { name } = useParams()
-    // console.log(name.length <4)
-    // console.log(name )
 
     const [country, setCountry] = useState([])
 
     useEffect(() => {
-        // console.log('useEffect')
         const getData = async () => {
             
             if(name.length > 4 ){
-                //console.log(name)
                 const data = await fetch(`https://restcountries.eu/rest/v2/name/${name}`)
                 const country = await data.json()
-                //console.log(country)
                 return setCountry(country)
 
             }else {
-                //console.log(name)
                 const data2 = await fetch(`https://restcountries.eu/rest/v2/alpha/${name}`)
                 const pepito = await data2.json()
                 const data = await fetch(`https://restcountries.eu/rest/v2/name/${pepito.name}`)
                 const country = await data.json()
-                //console.log(country)
                 return setCountry(country)
             }
         }
         getData()
     }, [name])
-
 
     return ( 
         <Container>
@@ -48,7 +40,7 @@ const Country = (props) => {
                 <Navbar.Brand>
                 <BrowserRouter forceRefresh={true}> 
                 <Link to={"/"} >
-                    <Button variant="light" className="shadow-lg p-3 mb-5 bg-white rounded"> <FontAwesomeIcon icon={faArrowLeft} /> back</Button>
+                    <Button variant="light" className="butcon"> <FontAwesomeIcon icon={faArrowLeft} /> back</Button>
                 </Link> 
                 </BrowserRouter>
                 </Navbar.Brand>
@@ -67,8 +59,7 @@ const Country = (props) => {
                 <Col>
                     <Container>
                         <Row>
-                        <h2><b>{item.name}</b></h2>
-                        
+                            <h2><b>{item.name}</b></h2>
                         </Row>
                         <Row>
                             <Col>
@@ -93,19 +84,16 @@ const Country = (props) => {
                         <p><b>Border Countries:</b> {
                                 item.borders.map( (item2, index) => ( 
                                         <Link to={`/country/${item2}`}>  
-                                            <Button variant="light" value="{item2}" className="shadow-lg p-3 mb-5 bg-white rounded" style={{margin: "0.2rem"}}> {item2}</Button>                   
-                                            
+                                            <Button variant="light" value="{item2}" className="butcon" style={{margin: "0.2rem"}}> {item2}</Button>                     
                                         </Link> 
                                 ))
                             }</p>
                             </Col>
-                            
                         </Row>
                     </Container> 
                 </Col>
                 ))
                 }
-                
             </Row>
         </Container>
     )

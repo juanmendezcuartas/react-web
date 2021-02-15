@@ -5,15 +5,6 @@ const Filter = (props) => {
 
     const { handleSearchRegion } = props
     const [state, setState] = useState({search: ''})
-    //const [regions, setRegions] = useState([])
-    //console.log(cosa[0].region)
-
-    // cosa.map(item => {
-    //     console.log(item.region)
-    //     console.log(regions)
-    //     setRegions([ ...regions, 'a'])
-    // })
-
     const region = ["Africa","Europe","Asia","Americas"]
     
     const handleChange = (e) => {
@@ -24,19 +15,9 @@ const Filter = (props) => {
 
     return (
         <Fragment>
-        {/* <form onChange={()=> {handleSearchRegion(state.search)}} >
-            <select onInput={handleChange}> Filter by Region
-                <option disable="true">Filter by Region</option>
-                    {
-                        region.map((item, index) =>(
-                        <option key={index} value={item}>{item}</option>
-                        ))
-                    }
-            </select>
-            </form> */}
             <Form onChange={()=> {handleSearchRegion(state.search)}}>
             <Form.Group controlId="exampleForm.SelectCustom"> 
-                <Form.Control as="select" custom onInput={handleChange}>
+                <Form.Control  as="select" custom onInput={handleChange}>
                 <option disable="true">Filter by Region</option>
                     {
                         region.map((item, index) =>(

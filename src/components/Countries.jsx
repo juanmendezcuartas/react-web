@@ -15,7 +15,6 @@ const Countries = (props) => {
     const [country, setCountry] = useState([])
 
     useEffect(() => {
-        //console.log('useEffect')
         getData()
     }, [])
 
@@ -23,7 +22,6 @@ const Countries = (props) => {
         
         const data = await fetch('https://restcountries.eu/rest/v2/all')
         const country = await data.json()
-        //console.log(country)
         setCountry(country)
     }
 
@@ -31,7 +29,6 @@ const Countries = (props) => {
         
         const data = await fetch(`https://restcountries.eu/rest/v2/name/${name}`)
         const country = await data.json()
-        //console.log(country)
         setCountry(country)
     }
 
@@ -39,17 +36,14 @@ const Countries = (props) => {
         
         const data = await fetch(`https://restcountries.eu/rest/v2/region/${region}`)
         const country = await data.json()
-        //console.log(country)
         setCountry(country)
     }
 
     const handleSearch = (search) => {
-        //console.log(search)
         getDataByName(search)
     }
 
     const handleSearchRegion = (search) => {
-        //console.log(search)
         getDataByRegion(search)
     }
 
@@ -71,14 +65,14 @@ const Countries = (props) => {
             </Navbar>
             </Container>
             <Container>
-                <Row xs={2} md={3} lg={5}> 
+                <Row xs={3} md={4} lg={5}> 
                     {
                         country.map( item => (
-                                <Card border="light" style={{margin: "1rem", width: '18rem'}}> 
+                                <Card key={item.numericCode} border="light" style={{margin: "1rem", width: '18rem'}}> 
                                     <Link to={`/country/${item.name}`}> 
                                         <Card.Img  src={item.flag} alt="country"></Card.Img>
                                     </Link> 
-                                    <Card.Body>
+                                    <Card.Body className="cardBody" >
                                     <Card.Title style={{fontWeight: "bold"}}>{item.name}</Card.Title>
                                         <div style={{fontSize: "12px"}}>
                                     <Card.Text >
