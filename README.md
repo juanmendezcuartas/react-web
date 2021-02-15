@@ -3,7 +3,7 @@
 ## Instalación create-react-app
   Instalar el paquete con `npx create-react-app react-web`. \
   Realizar limpieza de archivos que no se requieran para este proyecto. \
-  Iniciar la aplicacion por primera vez con `npm run start` .
+  Iniciar la aplicacion por primera vez con `npm run start`.
 
 ## Instalacion libreria
 Instalacion bootstrap : `npm install react-bootstrap boostrap` \
@@ -14,7 +14,7 @@ font awesome: \
     `npm install --save @fortawesome/free-solid-svg-icons`\
     `npm install --save @fortawesome/react-fontawesome`\
     `npm install --save @fortawesome/free-brands-svg-icons`\
-    `npm install --save @fortawesome/free-regular-svg-icons`\
+    `npm install --save @fortawesome/free-regular-svg-icons`
 
 
 ## API de paises 
@@ -53,7 +53,7 @@ react-web
 ## Despliegue en netlify
   Crear un repositorio en Github y subir el proyecto. \
   Crear una cuenta en Netlify para enlazar el repositorio de Github. \
-  Crear un nuevo sitio web en Netlify y escoger el repositior del proyecto. \ 
+  Crear un nuevo sitio web en Netlify y escoger el repositior del proyecto. 
   
 
 
