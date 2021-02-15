@@ -7,9 +7,9 @@
 
 ## Instalacion libreria
 Instalacion bootstrap : `npm install react-bootstrap boostrap` \
-react router: `npm install react-router-dom` \
-darkmode: `npm install styled-components` \
-font awesome: \
+React router: `npm install react-router-dom` \
+Styled components: `npm install styled-components` \
+Font awesome: \
     `npm i --save @fortawesome/fontawesome-svg-core`\
     `npm install --save @fortawesome/free-solid-svg-icons`\
     `npm install --save @fortawesome/react-fontawesome`\
