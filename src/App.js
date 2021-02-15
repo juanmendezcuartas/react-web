@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import Navbar from './components/Navbar'
+import NavbarP from './components/NavbarP'
 import Countries from './components/Countries'
 
 function App() {
 
   return (
       <Fragment>
-          <Navbar />
+          <NavbarP />
           <Countries />
       </Fragment>
   );

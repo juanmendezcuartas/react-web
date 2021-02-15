@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react'
+import { Form} from 'react-bootstrap'; 
 
 const Filter = (props) => {
 
@@ -23,7 +24,7 @@ const Filter = (props) => {
 
     return (
         <Fragment>
-        <form onChange={()=> {handleSearchRegion(state.search)}} >
+        {/* <form onChange={()=> {handleSearchRegion(state.search)}} >
             <select onInput={handleChange}> Filter by Region
                 <option disable="true">Filter by Region</option>
                     {
@@ -32,7 +33,19 @@ const Filter = (props) => {
                         ))
                     }
             </select>
-            </form>
+            </form> */}
+            <Form onChange={()=> {handleSearchRegion(state.search)}}>
+            <Form.Group controlId="exampleForm.SelectCustom"> 
+                <Form.Control as="select" custom onInput={handleChange}>
+                <option disable="true">Filter by Region</option>
+                    {
+                        region.map((item, index) =>(
+                        <option key={index} value={item}>{item}</option>
+                        ))
+                    }
+                </Form.Control>
+            </Form.Group>
+            </Form>
         </Fragment>
     )
 }

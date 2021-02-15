@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Search from '../components/Search'
 import Filter from '../components/Filter'
 import Country from '../components/Country'
+import { Card, Container, Row, Navbar } from 'react-bootstrap'; 
 import {
     BrowserRouter,
     Switch,
@@ -55,34 +56,49 @@ const Countries = (props) => {
     return (
         <BrowserRouter>
         <Switch>
-            <Route path="/" exact>
-            <div className="secondbar">
-                <div className="search">
-                    <Search handleSearch={handleSearch} />
-                </div>
-                <div className="filter">
-                    <Filter handleSearchRegion={handleSearchRegion} cosa={country}/>
-                </div>
-            </div>
-            <div className="countries">
-                <ul>
+            <Route path="/" exact> 
+            <Container fluid>
+            <Navbar>
+            <Navbar.Brand href="#home">
+                <Search handleSearch={handleSearch} />
+            </Navbar.Brand>
+            <Navbar.Toggle />
+            <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text>
+                <Filter handleSearchRegion={handleSearchRegion} cosa={country}/>
+                </Navbar.Text>
+            </Navbar.Collapse>
+            </Navbar>
+            </Container>
+            <Container>
+                <Row xs={2} md={3} lg={5}> 
                     {
                         country.map( item => (
-                            <li key={item.numericCode}>
-                                <Link to={`/country/${item.name}`}>
-                                    <img src={item.flag} alt="country"></img>
-                                </Link>
-                                <div className="text">
-                                    <h2>{item.name}</h2>
-                                    <h3>Population: {item.population}</h3>
-                                    <h3>Region: {item.region}</h3>
-                                    <h3>Capital: {item.capital}</h3>
-                                </div>
-                            </li>
+                                <Card border="light" style={{margin: "1rem", width: '18rem'}}> 
+                                    <Link to={`/country/${item.name}`}> 
+                                        <Card.Img  src={item.flag} alt="country"></Card.Img>
+                                    </Link> 
+                                    <Card.Body>
+                                    <Card.Title style={{fontWeight: "bold"}}>{item.name}</Card.Title>
+                                        <div style={{fontSize: "12px"}}>
+                                    <Card.Text >
+                                        <b>Population:</b> {item.population} 
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <b>Region:</b> {item.region}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <b>Capital:</b> {item.capital}
+                                    </Card.Text>
+
+                                    </div>
+                                    
+                                    </Card.Body>
+                                </Card>
                         ))
-                    }
-                </ul>
-            </div>
+                    } 
+                </Row> 
+                </Container>
                 </Route>
                 <Route path="/country/:name">
                     <Country />

@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react'
+import { Form} from 'react-bootstrap'; 
 
 const Search = (props) => {
 
@@ -12,14 +13,14 @@ const Search = (props) => {
 
     return (
         <Fragment>
-            <form onChange={()=> handleSearch(state.search)}>
-            <input
+            <Form onChange={()=> handleSearch(state.search)}>
+            <Form.Control
                 value={state.search}
                 onChange={handleChange}
                 type="text"
                 placeholder="Search for a country..."
             />
-            </form>
+            </Form>
         </Fragment>
     )
 }
