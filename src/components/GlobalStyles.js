@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.nav};
   }
 
-  .option {
+  .butcon {
     background-color: ${({ theme }) => theme.nav};
     color: ${({ theme }) => theme.text};
   }
